@@ -1,0 +1,31 @@
+name: zanis
+description: "A new Flutter project."
+
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2 #For Manage States
+  theme_provider: ^0.6.0 #For Multi Theme App
+  go_router: ^14.8.1 #For Manage Routing
+  hive: ^2.2.3 #Core Package For Save Local Data
+  hive_flutter: ^1.1.0 #Flutter Package For Save Local Data
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  hive_generator: ^2.0.1
+
+flutter:
+
+  uses-material-design: true
