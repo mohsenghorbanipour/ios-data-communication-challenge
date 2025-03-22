@@ -6,9 +6,9 @@ import 'package:zanis/core/theme/style/app_theme.dart';
 import 'package:theme_provider/theme_provider.dart' as themeProvider;
 
 class ThemeBloc extends ChangeNotifier {
-  ThemeBloc() {
-    loadCurrentTheme();
-  }
+  factory ThemeBloc() => _instance;
+  static final ThemeBloc _instance = ThemeBloc._init();
+  ThemeBloc._init();
 
   String _currentThemeId = theme.system.toString();
 
@@ -68,9 +68,11 @@ class ThemeBloc extends ChangeNotifier {
     await loadCurrentTheme();
     if (currentTheme == theme.system) {
       if (brightness == Brightness.light) {
-        themeProvider.ThemeProvider.controllerOf(context).setTheme(theme.light.toString());
+        themeProvider.ThemeProvider.controllerOf(context)
+            .setTheme(theme.light.toString());
       } else if (brightness == Brightness.dark) {
-        themeProvider.ThemeProvider.controllerOf(context).setTheme(theme.dark.toString());
+        themeProvider.ThemeProvider.controllerOf(context)
+            .setTheme(theme.dark.toString());
       }
     }
   }

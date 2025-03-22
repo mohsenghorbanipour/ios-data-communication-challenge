@@ -17,7 +17,7 @@ class App extends StatelessWidget {
             lazy: false,
           ),
           ChangeNotifierProvider(
-            create: (context) => ThemeBloc(),
+            create: (context) => ThemeBloc()..loadCurrentTheme(),
           ),
         ],
         child: Builder(
